@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2022.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhvSfMfpxaTpYuz6Fc6O5v6mxjgoVBOBQ&amp;callback=load&amp;libraries=&amp;v=weekly"&gt;&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;html&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://polyfill.io/v3/polyfill.min.js?features=default"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- jsFiddle will insert css and js --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Nashville Resources</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container" style="display: flex; height: 500px;"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div &gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="filters"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;li id = "Label" class = "active"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;b&gt;Click below to change categories.&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li id="Violence_filter" onclick="toggleGroup('Violence', this);" class="active"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Domestic Violence &amp;amp Sexual Assault&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li id="Food_filter" onclick="toggleGroup('Food', this);" class="active"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Food&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li id="Healthcare_filter" onclick="toggleGroup('Healthcare', this);" class="active"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Healthcare&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li id="Housing_filter" onclick="toggleGroup('Housing', this);" class="active"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Housing&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li id="Legal_filter" onclick="toggleGroup('Legal', this);" class="active"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Legal&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li id="LGBTQ_filter" onclick="toggleGroup('LGBTQ', this);" class="active"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Sexual &amp;amp Gender Minority &lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li id="MH_filter" onclick="toggleGroup('MH', this);" class="active"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Mental Health &amp;amp Substance Misuse&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li id="Veterans_filter" onclick="toggleGroup('Veterans', this);" class="active"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Veterans&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li id="Youth_filter" onclick="toggleGroup('Youth', this);" class="active"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Youth &amp;amp Adolescent&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id = "tree"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">       </span></p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id = "map"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Domestic Violence &amp; Sexual Assault Columns --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="Violence" class="infoContainer" width=100%&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="header" style="background-color:#A1919E"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt; Domestic Violence &amp;amp Sexual Assault Resources &lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cards" width=100%&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="Violence_c1" class="Category"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Sexual Assault Center'&gt; &lt;b&gt;Sexual Assault Center&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=http://www.sacenter.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;101 French Landing Dr, Nashville, TN 37228 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-259-9055 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Medical evaluation, therapy, and education related to sexual assault&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Those directly or indirectly affected by sexual assault&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Free &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='YWCA Nashville and Middle Tennessee'&gt; &lt;b&gt;YWCA Nashville and Middle Tennessee&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.ywcanashville.com&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;1608 Woodmont Blvd, Nashville, TN &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-269-9922, information@ywcanashville.com &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Crisis support, emergency shelter, case management, counseling, housing support, and education&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Domestic violence survivors&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='End Slavery Tennessee'&gt; &lt;b&gt;End Slavery Tennessee&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.endslaverytn.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;213 W Maplewood Lane #400 Nashville, TN 37207 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;Chelsea Nixon, 615-800-7270 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Assistance with therapy, housing, education, and finances after liberation from trafficking&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Human trafficking survivors&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Please contact before visiting.&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Magdalene House'&gt; &lt;b&gt;Magdalene House&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://thistlefarms.org/pages/magdalene-residential-program&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;5122 Charlotte Pike, Nashville, TN 37209 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-320-5325 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;2 years of rent-free housing, healthcare, counseling, and employment&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Survivors of human trafficking&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Food Cards --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="Food" class="infoContainer" width=100%&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="header" style="background-color:#F2C883"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt; Food Resources &lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cards" width=100%&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="Food_c1" class="Category"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Nashville Food Project'&gt; &lt;b&gt;Nashville Food Project&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.thenashvillefoodproject.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;5904 California Avenue, Nashville TN 37209 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-460-0172, info@thenashvillefoodproject.org &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Food trucks, local garden resources, cooking classes&lt;br&gt; &lt;b&gt; Population Served:&lt;/b&gt; People who are food insecure&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Second Harvest Food Bank of Middle Tennessee'&gt; &lt;b&gt;Second Harvest Food Bank of Middle Tennessee&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=http://secondharvestmidtn.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;331 Great Circle Road, Nashville, TN 37228 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;Courtney Blaise, 615-627-1625 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Direct food to those who are food insecure, sell food to partner agencies&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Food insecure (children and adults)&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='The Little Pantry that Could'&gt; &lt;b&gt;The Little Pantry that Could&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=http://www.thelittlepantrythatcould.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;2011 24th Ave North, Nashville, TN 37208 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-260-5769 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt; Produce and shelf stable food items; Referrals to other agencies for specific needs&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Anyone in need&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Christian Cooperative Ministry'&gt; &lt;b&gt;Christian Cooperative Ministry&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=helpmadison.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;201 Madison St, Madison, TN 37115 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-868-6865 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Food Pantry&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Open Mon/Wed 9 am – 12 pm, Tue/Thur 10 am – 12 pm &lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='The Salvation Army Magness Potter Community Center'&gt; &lt;b&gt;The Salvation Army Magness Potter Community Center&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.salvationarmynashville.org/magness-potter-community-center&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;611 Stockell St Nashville TN 37207 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-242-0411 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Food Pantry &lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Nashville Residents&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Open Mon-Thur 1 pm – 4 pm&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Hamilton United Methodist Church'&gt; &lt;b&gt;Hamilton United Methodist Church&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://hmumc.org/thepantry&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;3105 Hamilton Church Road Antioch TN 37013 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-361-7210 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Saturday Drive-Through Food Pantry&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Opens at 6:15am on Saturdays&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Salvation Army Nashville South'&gt; &lt;b&gt;Salvation Army Nashville South&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=www.salvationarmynashville.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;529 Paragon Mills Nashville, TN 37211 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-837-2444 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Food Pantry &lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Open Tue/Wed 1 pm - 5 pm&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='St Philip&amp;aposs Episcopal Church'&gt; &lt;b&gt;St Philip's Episcopal Church&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://tn211.myresourcedirectory.com/index.php/component/cpx/?task&amp;equalsresource.view&amp;id&amp;equals2909961&amp;search_history_id&amp;equals8983013&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;85 Fairway Drive, Nashville, TN 37214 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-788-1849 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Food Pantry&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Open Mon 9 am – 11 am and Thur 4 pm - 5:30 pm&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Martha O&amp;aposBryan Center'&gt; &lt;b&gt;Martha O'Bryan Center&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=http://www.marthaobryan.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;711 S 7th St, Nashville, TN 37206 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-254-1791 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Food Pantry&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Open Mon/Wed/Fri 9 am – 2 pm&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='East Nashville Co-Op'&gt; &lt;b&gt;East Nashville Co-Op&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://tn211.myresourcedirectory.com/index.php/component/cpx/?task&amp;equalsresource.view&amp;id&amp;equals2909625&amp;search_history_id&amp;equals738601&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;3115 Gallatin Pike Nashville TN 37216 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-540-0122 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Food Pantry&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Open Mon/Wed/Thur 10 am - 2:45 pm, Tue 12 pm - 4:45 pm&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Inspiritus'&gt; &lt;b&gt;Inspiritus&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://weinspirit.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;1628 Rosa L Parks Blvd Nashville TN 37208 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-838-5550 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Food Pantry&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Open Mon-Fri 8 am – 12 pm (closed Thurday) &lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Temple Baptist Church'&gt; &lt;b&gt;Temple Baptist Church&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.google.com/maps/place/Food+Distribution+Center+-+Temple+Baptist+Church/@36.2187309,-86.839442,15z/data&amp;equals!4m5!3m4!1s0x0:0xdb892b1c47db6d5a!8m2!3d36.2186663!4d-86.8394384&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;3720 Kings Ln, Nashville, TN 37218 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-876-7656 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Food Pantry&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Open Saturdays 10 am - 1 pm&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='St. Luke&amp;aposs Community House'&gt; &lt;b&gt;St. Luke's Community House&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.stlch.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;5601 New York Avenue TN 37209 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-350-7893 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Food Pantry &lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Open by appointment only on Thur 10:30 am-2:30 pm or Fri 9 am-1 pm&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Rural Hill Church of Christ'&gt; &lt;b&gt;Rural Hill Church of Christ&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.secondharvestmidtn.org/agency/rural-hill-church-of-christ&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;564 Bell Road Antioch TN 37013 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-361-1908 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Food Pantry&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Open Tue 9:30 am-11:30 am or Thur 5 pm-6:30 pm&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Healthcare Cards --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="Healthcare" class="infoContainer" width=100%&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="header" style="background-color:#AB8F61"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt; Healthcare Resources &lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cards" width=100%&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="HC_c1" class="Category"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Shade Tree Clinic'&gt; &lt;b&gt;Shade Tree Clinic&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.shadetreeclinic.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;2410 Franklin Pike Nashville, TN 37204 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-422-5262 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;People without health insurance&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Clinic at Mercury Courts'&gt; &lt;b&gt;Clinic at Mercury Courts&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.wttin.org/resource/clinic-mercury-courts&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;411 Murfreesboro Pike, Nashville TN 37210 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-259-5124 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Primary care and mental health services&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Patients who are homeless, recently homeless or low-income &lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='One Hundred Oaks'&gt; &lt;b&gt;One Hundred Oaks&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://search.vanderbilthealth.com/locations/vanderbilt-health-one-hundred-oaks&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;719 Thompson Lane, Nashville, TN 37204 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-322-5000 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Medical appointments and procedures&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Dispensary of Hope'&gt; &lt;b&gt;Dispensary of Hope&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=http://dispensaryofhope.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;2700 Brick Church Pike, Nashville, TN 37207 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;Shannon Robision, 629-208-0731 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Medication distribution&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Free to patients at or below 200% of federal poverty line or patients without pharmaceutical insurance&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Nashville CARES'&gt; &lt;b&gt;Nashville CARES&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=http://nashvillecares.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;633 Thompson Lane, Nashville, TN 37204 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;Jena Alstatt, 615-921-0239 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Education, advocacy, and support related to HIV/AIDS&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Patients with HIV&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Nashville Metro Public Health Department'&gt; &lt;b&gt;Nashville Metro Public Health Department&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.nashville.gov/Health-Department.aspx&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;Lentz Health Center, 2500 Charlotte Ave, Nashville, TN &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-340-5616 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Specialty clinics, prenatal &amp;amp perinatal care, limited pharmacy, behavioral health counselors&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Metropolitan Nashville&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Cost varies by ability to pay &lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Siloam Health'&gt; &lt;b&gt;Siloam Health&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://siloamhealth.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;820 Gale Lane, Nashville TN 37204 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-298-5406 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Primary care, specialty services, refugee medical screening&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Uninsured individuals and refugees&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Hope Clinic for Women'&gt; &lt;b&gt;Hope Clinic for Women&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.hopeclinicforwomen.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;1810 Hayes Street, Nashville TN 37203 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;Megan Snell (Community Relations Manager), msnell@hopeclinicforwomen.org, 615-627-2790 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Pregnancy care + 1 year post-partum care including gynecology &amp;amp STD services, contraception, education, maternity supplies and counseling for loss of a child&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Pregnant and post-partum women&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;No elective abortions, Faith-based&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Planned Parenthood Nashville'&gt; &lt;b&gt;Planned Parenthood Nashville&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.plannedparenthood.org/health-center/tennessee/nashville/37203/nashville-health-center-2716-91550&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;412 Dr. D.B. Todd, Jr. Blvd., Nashville, TN 37203 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;866-711-1717 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Abortion-related care, STI Testing and Care, Men's and Women's Health Services &lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Reduced cost or free care depending on specific circumstances&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Housing Cards --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="Housing" class="infoContainer" width=100%&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="header" style="background-color:#A6E0D9"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt; Housing Resources &lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cards" width=100%&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="Housing_c1" class="Category"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Metropolitan Action Commission'&gt; &lt;b&gt;Metropolitan Action Commission&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.nashville.gov/Metro-Action-Commission/Community-Programs/Household-Assistance.aspx&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;Clifford Allen Building, 800 2nd Avenue North, Nashville, TN 37201 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-862-8860 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Emergency Household Assistance, Household Assistance for Seniors, Housing Assistance for Formerly Homeless Individuals&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Davidson County residents who meet Federal Income Guidelines + program criteria&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Metropolitan Social Services'&gt; &lt;b&gt;Metropolitan Social Services&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.nashville.gov/Social-Services.aspx&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;800 2nd Avenue North, Nashville, TN 37201 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-862-6400 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Social Services - Counseling, Case Management, Homeless Services, Burial Services&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Davidson County Residents&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Nashville Rescue Mission'&gt; &lt;b&gt;Nashville Rescue Mission&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://nashvillerescuemission.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;639 Lafayette Street, Nashville, TN 37203 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;Andrew Jeffries, 615-255-2475 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Homeless shelter that provides 3 meals/day, life coaches, case managers, and counseling and addiction experts&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Room in the Inn'&gt; &lt;b&gt;Room in the Inn&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=http://roominthein.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;705 Drexel St. Nashville, TN 37203 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-251-7019 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Programs, support, and services to the homeless community&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Need Link'&gt; &lt;b&gt;Need Link&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.needlink.org/about#just-basics&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;1600 56th Ave North, Nashville, TN 37209 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-269-6835 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Payment assistance for utility bills &lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Families, seniors, and people in crisis situations&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Must apply in person&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Metropolitan Action Commision'&gt; &lt;b&gt;Metropolitan Action Commision&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.nashville.gov/Metro-Action-Commission/Community-Programs/Utility-Assistance-Program.aspx&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;Clifford Allen Building, 800 2nd Avenue North, Nashville, TN 37201 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-862-8860 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Assistance with payments of electric, gas, propane or other energy resource bills; Elderly, families with children under six years old or disabled residents can receive free fan and/or air conditioning unit during the summer months &lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Davidson County residents meeting income guidelines&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Must live in Davidson County&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Legal Resources --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="Legal" class="infoContainer" width=100%&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="header" style="background-color:#943B87"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt; Legal Resources &lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cards" width=100%&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="Legal_c1" class="Category"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Project Return'&gt; &lt;b&gt;Project Return&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=http://projectreturninc.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;806 4th Ave South, Nashville, TN 37210 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;Chelsea Kahle, 615-327-9654 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Job coaching&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Previously incarcerated men and women&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Legal Aid Society'&gt; &lt;b&gt;Legal Aid Society&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://las.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;1321 Murfreesboro Pike, Suite 400, Nashville, TN 37217 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;1-800-238-1443 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Telephone legal advice + legal clinics regarding employment, domestic violence, healthcare, housing, and money/taxes&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Low-income people in need of legal assistance&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Do not take criminal cases&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Conexion Americas'&gt; &lt;b&gt;Conexion Americas&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=http://conexionamericas.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;2195 Nolensville Pike, Nashville, TN 37211 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;Sara Del Castillo, 629-800-5823 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Link families to legal assistance and bilingual services; Financial planning and education for home-buying; Foreclosure assistance&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Latinx families&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Tennessee Immigrant and Refugee Rights Coalition'&gt; &lt;b&gt;Tennessee Immigrant and Refugee Rights Coalition&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.tnimmigrant.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;2195 Nolensville Pike, Nashville, TN, 37211 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;Dennisse Calle, 609-851-7773 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Empower immigrants to defend their rights via legal document preparation, english classes, citizenship services and legal services regarding deportation&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Immigrants&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- SGM Resources --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="LGBTQ" class="infoContainer" width=100%&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="header" style="background-color:#EDAFAF"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt; Sexual and Gender Minority Resources &lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cards" width=100%&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="SGM_c1" class="Category"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Oasis Center - LGBTQ'&gt; &lt;b&gt;Oasis Center - LGBTQ&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://oasiscenter.org/for-youth/just-us&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;1704 Charlotte Ave, Suite 200, Nashville, TN 37203 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-983-6855, Joseph Clark: jclark@oasiscenter.org &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Programs to support and empower LGBTQ+ youth&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;LGBTQ+ Youth&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='LaunchPad'&gt; &lt;b&gt;LaunchPad&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.nashvillelaunchpad.com&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;604 Gallatin Ave suite 206, Nashville, TN 37206 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;629-888-3093 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Winter shelter to youth ages 18-24&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Ages 18-24, affirming to LGBTQ+ youth&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Contact to find where space may be available.&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- MH Cards --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="MH" class="infoContainer" width=100%&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="header" style="background-color:#7A97A3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt; Mental Health and Substance Misuse Resources &lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cards" width=100%&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="MH_c1" class="Category"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='AGAPE'&gt; &lt;b&gt;AGAPE&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.agapenashville.org/about&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;4555 Trousdale Drive, Nashville, TN 37204 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-781-3000 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Faith-based counseling and psychological services&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Cost varies by ability to pay&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Casa Azafran'&gt; &lt;b&gt;Casa Azafran&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=http://www.casaazafran.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;2195 Nolensville Pike, Nashville, TN 37211 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-320-5152 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt; Health, financial, legal services; Cultural, culinary and educational enrichment &lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Immigrants, refugees&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Centerstone'&gt; &lt;b&gt;Centerstone&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://centerstone.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;2400 White Avenue, Nashville, TN 37204¬† &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;Main office: 615-460-4200 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Mental health care, addiction treatment, and community education&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Mental Health Cooperative'&gt; &lt;b&gt;Mental Health Cooperative&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.mhc-tn.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;275 Cumberland Bend, Nashville, TN 37228 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;Main Office: 615-726-3340; Crisis Line: 615-726-0125 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Crisis, treatment, and therapy services related to mental health&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Adults, adolescents, and children&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Lloyd C. Elam Mental Health Center at Meharry Medical College'&gt; &lt;b&gt;Lloyd C. Elam Mental Health Center at Meharry Medical College&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.mmc.edu/education/som/academicdepartments/somclinicaldepartments/psychiatry-behavioralsciences/elamcenterinfopage.html&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;1005 Dr. D.B. Todd, Jr. Boulevard, Suite 2021A, Nashville, TN 37208 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-327-6256 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Substance use assessments, Adolsecent day treatment, Adult continuum of services, and Suboxone Clinic&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Adolescents, pregnant women, postpartum women, and adults&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='The Next Door'&gt; &lt;b&gt;The Next Door&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=http://thenextdoor.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;402 22nd Ave North, Nashville, TN 37203 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;April Barnes, 615-251-8805 ext:577 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Outpatient and inpatient care, detox, therapy, and housing resource&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Women with substance use concerns&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Faith-based&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Veterans Cards --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="Veterans" class="infoContainer" width=100%&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="header" style="background-color:#BEDB8F"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt; Veterans Resources &lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cards" width=100%&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="Veterans_c1" class="Category"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Nashville VA Medical Center'&gt; &lt;b&gt;Nashville VA Medical Center&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://www.va.gov/health-care/how-to-apply&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;1310 24th Avenue South &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-327-4751 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Medical care to veterans living in middle Tennessee and Kentucky&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Veterans&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Operation Stand Down Tennessee'&gt; &lt;b&gt;Operation Stand Down Tennessee&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=http://osdtn.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;1125 12th Avenue South, Nashville, TN 37203 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;Clyde Vincent, 615-248-1981 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Employment, legal aid, counseling, basic needs/food, VA benefits, VA shuttle, and Supportive Services for Veteran Families (SSVF)&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Veterans&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Youth Cards --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="Youth" class="infoContainer" width=100%&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="header" style="background-color:#86946F"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt; Youth &amp;amp Adolescent Resources &lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cards" width=100%&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="Youth_c1" class="Category"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='CASA Nashville'&gt; &lt;b&gt;CASA Nashville&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=http://casanashville.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;601 Woodland Street, Nashville, TN, 37206 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;Julianna Huddle, 615-425-2383 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Volunteer court advocates for minors&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Abused and neglected children in foster care&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='First Steps'&gt; &lt;b&gt;First Steps&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=http://firststepsnashville.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;1900 Graybar Lane, Nashville, TN 37215 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;Heather Higgins, 615-690-3091 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Educate and care for children with special needs through occupational, speech, and physical therapy along with parent coaching&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Children and parents of children with special needs&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Next Steps at Vanderbilt'&gt; &lt;b&gt;Next Steps at Vanderbilt&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=http://vu.edu/nextsteps&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;Peabody College, 230 Appleton Place, Nashville, TN 37203 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;Tammy Day, 615-424-4501 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;4 year certificate program for students with intellectual disabilities&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Students up to age 25 with intellectual disabilties&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Oasis Center'&gt; &lt;b&gt;Oasis Center&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://oasiscenter.org&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;1704 Charlotte Ave #200, Nashville, TN 37203 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;Carlie Webb, 615-983-6887 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Crisis management, youth engagement, and college/career advising&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Youth in Middle Tennessee&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Ronald McDonald House'&gt; &lt;b&gt;Ronald McDonald House&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=http://www.rmhcnashville.com&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;2144 Fairfax Ave, Nashville, TN 37212 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;Kirra Menees, 615-343-4000 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Assist and provide housing for families with chronically ill children&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;Families with chronically ill children&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li class='Resource'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class='info' id='Our Kids Center'&gt; &lt;b&gt;Our Kids Center&lt;/b&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt; &lt;a href=https://ourkidscenter.com&gt; &lt;b&gt;Website &lt;/b&gt; &lt;/a&gt; &lt;br&gt; &lt;b&gt;Address: &lt;/b&gt;1804 Hayes St, Nashville, TN 37203 &lt;br&gt; &lt;b&gt;Contact Info: &lt;/b&gt;615-341-4911 &lt;br&gt; &lt;br&gt; &lt;b&gt;Services: &lt;/b&gt;Forensic examination and crisis counseling in response to concerns of child sexual abuse&lt;br&gt; &lt;b&gt; Population Served: &lt;/b&gt;People affected by sexual abuse of minors&lt;br&gt; &lt;b&gt; Additional Notes: &lt;/b&gt;Free, Referral-Based&lt;br&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="footer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;i&gt;This map was created to highlight different resources available to people in the Nashville area. &lt;br&gt; &lt;a href=https://forms.gle/BcAYpsnLCFGebmXBA&gt; Click here&lt;/a&gt; to let us know about any errors, resources that could be added, or suggestions for improvement.&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
